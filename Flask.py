@@ -15,7 +15,7 @@ def about():
     print(url_for('about'))
     return render_template("about.html", title="О сайте", menu=menu)
 
-@app.route("/profile/<username>")
+@app.route("/profile/<path:username>")
 def profile(username):
     return f"Пользователь: {username}"
 
