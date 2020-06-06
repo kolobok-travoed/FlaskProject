@@ -19,7 +19,13 @@ def about():
 def profile(username):
     return f"Пользователь: {username}"
 
-if __name__ == "__main__":
-    app.run(debug=True)
+with app.test_request_context():
+    print(url_for('index'))
+    print(url_for('about'))
+    print(url_for('profile', username="kolobok"))
+
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
 
